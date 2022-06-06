@@ -9,9 +9,7 @@ const tagsService = require("./services/tags.service");
 let client = null;
 let pizzasCollection = null;
 
-MongoClient.connect(
-  "mongodb+srv://sourcemx:sourcemx@sourcemx.fx5fp.mongodb.net/?retryWrites=true&w=majority"
-)
+MongoClient.connect(process.env.MONGO_HOST)
   .then((_client) => {
     client = _client;
     pizzasCollection = _client.db("pizza-app").collection("pizzas");
