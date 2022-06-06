@@ -68,7 +68,7 @@ function bootstrap() {
   });
   app.use(express.static("public"));
   //app.get(...)
-  app.listen(8080, function () {
+  app.listen(process.env.PORT, function () {
     console.log("listening on port 8080...");
   });
 }
